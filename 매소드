@@ -1,0 +1,40 @@
+// 2차원 배열 매소드 출력 및 리버스
+public class Arraytest2 {
+
+	static void reverse1D(int n[]) {
+		for (int k = 0; k < n.length / 2; k++) {
+			int temp = n[k];
+			n[k] = n[n.length - 1 - k];
+			n[n.length - 1 - k] = temp;
+		}
+
+	}
+
+	static void reverse2D(int a[][]) {
+		for (int i = 0; i < a.length; i++) {
+			reverse1D(a[i]);
+		}
+	}
+
+	static void print1D(int[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.printf("%3d", arr[i]);
+		}
+		System.out.println();
+	}
+
+	static void print2D(int[][] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			print1D(arr[i]);
+		}
+	}
+
+	public static void main(String[] args) {
+		int[][] a = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } };
+		print2D(a);
+		reverse2D(a);
+		print2D(a);
+
+	}
+
+}
